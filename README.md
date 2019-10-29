@@ -34,7 +34,13 @@ Java `gradle\`
 
 ### spring boot 2.x
 
+<https://guides.gradle.org/building-spring-boot-2-projects-with-gradle/>
 
 
+### debug
 
+TODO
 
+### test
+
+TODO

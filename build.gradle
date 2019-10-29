@@ -2,7 +2,6 @@ plugins {
 	id 'org.springframework.boot' version '2.2.0.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 	id 'java'
-	id 'checkstyle'
 }
 
 group = 'com.example'
@@ -27,6 +26,11 @@ dependencies {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 }
+
+    bootRun {
+        sourceResources sourceSets.main
+        jvmArgs "-XX:TieredStopAtLevel=1", "-Xverify:none"
+    }
 
 test {
 	useJUnitPlatform()
