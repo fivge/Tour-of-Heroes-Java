@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/users")     // 通过这里配置使下面的映射都在/users下
+@RequestMapping(value = "/users") // 通过这里配置使下面的映射都在/users下
 public class UserController {
 
     // 创建线程安全的Map，模拟users信息的存储
@@ -29,7 +29,7 @@ public class UserController {
      *
      * @return
      */
-    // FIXME: 无法访问 /users 只能访问 /users/
+    // 无法访问 /users 只能访问 /users/
     @GetMapping("/")
     public List<User> getUserList() {
         // 还可以通过@RequestParam从页面中传递参数来进行查询条件或者翻页信息的传递

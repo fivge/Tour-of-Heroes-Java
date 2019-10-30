@@ -1,8 +1,15 @@
-server: 
+server:
   port: 6000
 
 spring:
   application:
     name: hero-service
+
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/db_example
+    username: springuser
+    password: ThePassword
+
   jpa:
-    database-platform: mysql
+    hibernate:
+      ddl-auto: update
