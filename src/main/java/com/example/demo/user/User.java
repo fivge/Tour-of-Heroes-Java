@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.user;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;
@@ -14,7 +14,7 @@ public class User {
     private Long id;
 
     @NotNull
-    @Size(min = 3,max = 6)
+    @Size(min = 3, max = 6)
     private String name;
 
     @NotNull
