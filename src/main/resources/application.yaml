@@ -13,3 +13,10 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    default-fetch-size: 100
+    default-statement-timeout: 3000
+  mapperLocations: (classpath:cn/tengshe789/dao/*.xml)

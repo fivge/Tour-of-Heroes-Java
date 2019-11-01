@@ -34,6 +34,8 @@ java -jar build/libs/xxxx-0.1.0.jar
 
 <https://juejin.im/post/5a4a5e2bf265da4322418d7f>
 
+[maven 2 gradle](http://sagioto.github.io/maven2gradle/)
+
 ### mysql
 
 > install
@@ -113,11 +115,21 @@ net start mariadb
 
 #### RESTful API
 
+相比 1.x 版本教程中自定义 set 和 get 函数的方式，这里使用@Data 注解可以实现在编译器自动添加 set 和 get 函数的效果。该注解是 lombok 提供的
+
 #### Mysql CRUD
+
+##### Spring Data repository
 
 [Accessing data with MySQL
 ](https://spring.io/guides/gs/accessing-data-mysql/#initial)
 
+[CrudRepository JpaRepository PagingAndSortingRepository](https://www.jianshu.com/p/cbf0a7c5c985)
+
 #### More
 
 ##### Arch
+
+### wrk
+
+[`wrk`](https://github.com/wg/wrk)
