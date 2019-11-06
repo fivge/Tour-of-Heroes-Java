@@ -28,7 +28,8 @@ out/
 /.nb-gradle/
 
 ### VS Code ###
-.vscode/
+.vscode/*
+!.vscode/org.eclipse.jdt.core.prefs
 
 ### dev only ###
 *.http
