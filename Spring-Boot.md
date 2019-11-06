@@ -4,35 +4,35 @@
 
 - `lombok` `@Data`
   getter setter
+  相比 1.x 版本教程中自定义 set 和 get 函数的方式，这里使用@Data 注解可以实现在编译器自动添加 set 和 get 函数的效果。该注解是 lombok 提供的
 
 - `javax.validation.constraints`
   valid
 
 #### `UserController.java`
 
-````java
+```java
     // 创建线程安全的Map，模拟users信息的存储
     static Map<Long, User> users = Collections.synchronizedMap(new HashMap<Long, User>());
-    ```
-````
+```
 
 - `@RestController`
   res body as json
 
 ```java
-	@PostMapping(path = "/add")
-	public @ResponseBody String addNewGhost(@RequestBody City city) {
-		cityService.insert(city);
-		return "Saved";
-    }
+@PostMapping(path = "/add")
+public @ResponseBody String addNewGhost(@RequestBody City city) {
+    cityService.insert(city);
+    return "Saved";
+}
 
-    // =>
+// =>
 
-	@PostMapping(path = "/add")
-	public String addNewGhost(@RequestBody City city) {
-		cityService.insert(city);
-		return "Saved";
-	}
+@PostMapping(path = "/add")
+public String addNewGhost(@RequestBody City city) {
+    cityService.insert(city);
+    return "Saved";
+}
 ```
 
 - `@RequestMapping`
@@ -51,8 +51,7 @@
 
 ### 0x02 Spring Data repository
 
-[Accessing data with MySQL
-](https://spring.io/guides/gs/accessing-data-mysql/#initial)
+[Accessing data with MySQL](https://spring.io/guides/gs/accessing-data-mysql/#initial)
 
 [`CrudRepository` `JpaRepository` `PagingAndSortingRepository`](https://www.jianshu.com/p/cbf0a7c5c985)
 
@@ -86,6 +85,77 @@
     ghostRepository.findAll();
 ```
 
+### 0x00 Spring Data JPA
+
+<https://spring.io/projects/spring-data-jpa#learn>
+
+`build.gradle`
+
+```
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+}
+```
+
+[Accessing JPA Data with REST](https://spring.io/guides/gs/accessing-data-rest/)
+
+[Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
+
+####
+
+`Entity` <==> `Repository`
+
+```java
+import java.util.List;
+
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.repository.query.Param;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+
+@RepositoryRestResource(collectionResourceRel = "people", path = "people")
+public interface PersonRepository extends PagingAndSortingRepository<Person, Long> {
+
+	List<Person> findByLastName(@Param("name") String name);
+
+}
+```
+
+> PagingAndSortingRepository
+
+Extension of CrudRepository to provide additional methods to retrieve entities using the pagination and sorting abstraction.
+
+```java
+interface PagingAndSortingRepository<T, ID> extends CrudRepository<T, ID>
+```
+
+> CrudRepository
+
+> @RepositoryRestResource
+
+### 0x00 Database
+
+### 0x04 Mybatis
+
+#### Mybatis Comment
+
+#### Mybatis XML
+
+[MyBatis Pagination](https://github.com/pagehelper/Mybatis-PageHelper)
+
+### 0x06 With Kotlin
+
+<https://www.jianshu.com/p/0d67771ae14c>
+
+`协程`
+
+###
+
+[Spring Dependency Injection Patterns](https://kinbiko.com/java/dependency-injection-patterns/)
+
+### 0x0X
+
+`org.springframework.beans.factory.annotation.Autowired` `@Autowired`
+
 ### ~~0x03 Reactive~~
 
 > #### Spring WebFlux
@@ -103,21 +173,3 @@
 > #### Vert.x
 
 > #### Async
-
-### 0x04 Mybatis Comment
-
-### 0x05 Mybatis XML
-
-### 0x06 With Kotlin
-
-<https://www.jianshu.com/p/0d67771ae14c>
-
-`协程`
-
-###
-
-[Spring Dependency Injection Patterns](https://kinbiko.com/java/dependency-injection-patterns/)
-
-### 0x0X
-
-`org.springframework.beans.factory.annotation.Autowired` `@Autowired`

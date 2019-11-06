@@ -30,6 +30,12 @@ java -jar build/libs/xxxx-0.1.0.jar
 
 [用 Gradle 构建 Spring Boot 项目](https://www.cnblogs.com/davenkin/p/gradle-spring-boot.html)
 
+<https://guides.gradle.org/building-spring-boot-2-projects-with-gradle/>
+
+> Gradle Kotlin DSL
+
+[Gradle + Kotlin = ⚡️ 🚀️](https://gradle.org/kotlin/)
+
 ### maven
 
 <https://juejin.im/post/5a4a5e2bf265da4322418d7f>
@@ -107,29 +113,8 @@ net start mariadb
 
 <https://github.com/JeffLi1993/springboot-learning-example>
 
-#### Init
+### Tools
 
-##### with gradle
-
-<https://guides.gradle.org/building-spring-boot-2-projects-with-gradle/>
-
-#### RESTful API
-
-相比 1.x 版本教程中自定义 set 和 get 函数的方式，这里使用@Data 注解可以实现在编译器自动添加 set 和 get 函数的效果。该注解是 lombok 提供的
-
-#### Mysql CRUD
-
-##### Spring Data repository
-
-[Accessing data with MySQL
-](https://spring.io/guides/gs/accessing-data-mysql/#initial)
-
-[CrudRepository JpaRepository PagingAndSortingRepository](https://www.jianshu.com/p/cbf0a7c5c985)
-
-#### More
-
-##### Arch
-
-### wrk
+#### wrk
 
 [`wrk`](https://github.com/wg/wrk)
